@@ -45,24 +45,32 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  /* Gaming theme colors - neon green primary, neon blue secondary, red accent */
+  --gaming-neon-green: #00ff88;
+  --gaming-neon-blue: #00aaff;
+  --gaming-red: #ff3366;
+  --gaming-black: #0a0a0a;
+  --gaming-dark-gray: #1a1a1a;
+  --gaming-border: #333;
+  
+  --background: var(--gaming-black);
+  --foreground: var(--gaming-neon-green);
+  --card: var(--gaming-dark-gray);
+  --card-foreground: #ffffff;
+  --popover: var(--gaming-dark-gray);
+  --popover-foreground: #ffffff;
+  --primary: var(--gaming-neon-green);
+  --primary-foreground: var(--gaming-black);
+  --secondary: var(--gaming-neon-blue);
+  --secondary-foreground: var(--gaming-black);
+  --muted: #2a2a2a;
+  --muted-foreground: #888888;
+  --accent: var(--gaming-red);
+  --accent-foreground: #ffffff;
+  --destructive: var(--gaming-red);
+  --border: var(--gaming-border);
+  --input: var(--gaming-border);
+  --ring: var(--gaming-neon-green);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -118,5 +126,34 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .gaming-glow-green {
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+  }
+  
+  .gaming-glow-blue {
+    box-shadow: 0 0 20px rgba(0, 170, 255, 0.3);
+  }
+  
+  .gaming-glow-red {
+    box-shadow: 0 0 20px rgba(255, 51, 102, 0.3);
+  }
+  
+  .gaming-text-glow {
+    text-shadow: 0 0 10px currentColor;
+  }
+  
+  .gaming-bg-gradient {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  }
+  
+  .gaming-neon-border {
+    border: 1px solid var(--gaming-neon-green);
+    box-shadow: 
+      0 0 10px rgba(0, 255, 136, 0.3),
+      inset 0 0 10px rgba(0, 255, 136, 0.1);
   }
 }
